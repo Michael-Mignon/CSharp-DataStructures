@@ -1,16 +1,4 @@
-// using System;
-
-class Node
-{
-	int data;
-	Node next;
-
-	public Node(int data)
-	{
-		this.data = data;
-	}
-}
-
+// using Node;
 public class LinkedList
 {
 	Node head;
@@ -20,9 +8,11 @@ public class LinkedList
 	public void insertHead(int data)
 	{
 		Node temp = new Node(data);
-		temp.next = this.head;
+
+		temp.setNext(this.head);
 		this.head = temp;
 		this.size++;
+
 		if(this.tail == null)
 		{
 			this.tail = this.head;
@@ -31,9 +21,9 @@ public class LinkedList
 
 	public void printList()
 	{
-		for(Node temp = this.head; temp.next != null; temp = temp.next)
+		for(Node temp = this.head; temp.getNext() != null; temp = temp.getNext())
 		{
-			System.Console.WriteLine(temp.data);
+			System.Console.WriteLine(temp.getData());
 		}
 	}
 
